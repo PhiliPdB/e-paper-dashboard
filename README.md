@@ -12,7 +12,7 @@ I'm able to communicate with the display to draw in all three supported colours.
     - [ ] Being able to draw images
 - [ ] Figure out networking and how to make API calls
 - [ ] Create modules for:
-    - [ ] Current date
+    - [x] Current date
     - [ ] Weather information
     - [ ] Covid-19 information
     - [ ] System information

@@ -6,8 +6,10 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+chrono = "0.4"
 embedded-graphics = "0.7"
 embedded-hal = "0.2"
 epd-waveshare = { git = "https://github.com/PhiliPdB/epd-waveshare", branch = "fix/epd2in7b-tricolor" }
 linux-embedded-hal = "0.3"
+profont = "0.5"
 rppal = { version = "0.13", features = ["hal-unproven"] }

@@ -9,14 +9,14 @@ use linux_embedded_hal::{
 use rppal::gpio::{Gpio, OutputPin, InputPin};
 
 
-pub struct PiDisplay {
+pub struct Dashboard {
     spi: Spidev,
     epd: Epd2in7b<Spidev, OutputPin, InputPin, OutputPin, OutputPin, Delay>,
     display: Display2in7b,
     delay: Delay,
 }
 
-impl PiDisplay {
+impl Dashboard {
     pub fn new() -> Self {
         // Setup gpio pins for display
         let gpio = Gpio::new().expect("get gpio");
