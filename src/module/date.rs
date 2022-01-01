@@ -47,11 +47,11 @@ impl Module for DateModule {
             .expect("Draw weekday");
 
         // Update style with smaller font and black instead of red letters.
-        style.font = &profont::PROFONT_18_POINT;
+        style.font = &profont::PROFONT_14_POINT;
         style.text_color = Some(TriColor::Black);
 
         // Draw the date
-        Text::with_text_style(&local.format("%b %-d, %Y").to_string(), Point::new(w + 7, offset_y + 8), style, text_style)
+        Text::with_text_style(&local.format("%b %-d, %Y").to_string(), Point::new(w + 7, offset_y + 11), style, text_style)
             .draw(buffer)
             .expect("Draw date");
     }
