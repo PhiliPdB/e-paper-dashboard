@@ -7,9 +7,15 @@ edition = "2021"
 
 [dependencies]
 chrono = "0.4"
+dotenv = "0.15"
 embedded-graphics = "0.7"
 embedded-hal = "0.2"
 epd-waveshare = { git = "https://github.com/PhiliPdB/epd-waveshare", branch = "fix/epd2in7b-tricolor" }
+image = "0.23"
+imageproc = "0.22"
 linux-embedded-hal = "0.3"
 profont = "0.5"
 rppal = { version = "0.13", features = ["hal-unproven"] }
+serde = { version = "1.0", features = ["derive"] }
+structopt = { version = "0.3", default-features = false }
+ureq = { version = "2.4", features = ["json"] }
