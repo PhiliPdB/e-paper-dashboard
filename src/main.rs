@@ -16,7 +16,7 @@ fn main() {
     // Load .env environment
     dotenv().ok();
     // Get configuration
-    let config = Config::from_args();
+    let config: Config = Config::from_args();
 
     println!("Initializing display");
     let mut dashboard = Dashboard::new();
