@@ -14,8 +14,10 @@ epd-waveshare = { git = "https://github.com/PhiliPdB/epd-waveshare", branch = "f
 image = "0.23"
 imageproc = "0.22"
 linux-embedded-hal = "0.3"
+local-ip-address = "0.4"
 profont = "0.5"
 rppal = { version = "0.13", features = ["hal-unproven"] }
 serde = { version = "1.0", features = ["derive"] }
 structopt = { version = "0.3", default-features = false }
+sysinfo = "0.22"
 ureq = { version = "2.4", features = ["json"] }

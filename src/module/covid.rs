@@ -56,7 +56,7 @@ impl Module for CovidModule {
 
         // Draw module icon
         image::draw_icon(
-            buffer, Point::new(offset_x + 2, offset_y + 2),
+            buffer, Point::new(offset_x + 2, offset_y),
             "covid/covid.jpeg", 45,
             TriColor::Chromatic
         );
@@ -65,31 +65,31 @@ impl Module for CovidModule {
         // Draw other icons
         // Icon for total stats
         image::draw_icon(
-            buffer, Point::new(offset_x + 50, offset_y + 12),
+            buffer, Point::new(offset_x + 50, offset_y + 10),
             "covid/total.jpg", 25, TriColor::Black
         );
         // Icon for today stats
         image::draw_icon(
-            buffer, Point::new(offset_x + 160, offset_y + 12),
+            buffer, Point::new(offset_x + 160, offset_y + 10),
             "covid/today.jpg", 25, TriColor::Black
         );
 
         // Cases icons
         image::draw_icon(
-            buffer, Point::new(offset_x + 82, offset_y + 2),
+            buffer, Point::new(offset_x + 82, offset_y),
             "covid/cough.jpeg", 22, TriColor::Black
         );
         image::draw_icon(
-            buffer, Point::new(offset_x + 192, offset_y + 2),
+            buffer, Point::new(offset_x + 192, offset_y),
             "covid/cough.jpeg", 22, TriColor::Black
         );
         // Deaths icons
         image::draw_icon(
-            buffer, Point::new(offset_x + 82, offset_y + 24),
+            buffer, Point::new(offset_x + 82, offset_y + 22),
             "covid/skull.jpeg", 22, TriColor::Black
         );
         image::draw_icon(
-            buffer, Point::new(offset_x + 192, offset_y + 24),
+            buffer, Point::new(offset_x + 192, offset_y + 22),
             "covid/skull.jpeg", 22, TriColor::Black
         );
 
@@ -105,14 +105,14 @@ impl Module for CovidModule {
 
         Text::with_text_style(
             &format!("{:.3}M", covid_data.cases as f64 / 1e6),
-            Point::new(offset_x + 110, offset_y + 7), style, text_style
+            Point::new(offset_x + 110, offset_y + 5), style, text_style
         )
             .draw(buffer)
             .expect("draw total cases");
 
         Text::with_text_style(
             &format!("{}", covid_data.today_cases.unwrap()),
-            Point::new(offset_x + 218, offset_y + 7), style, text_style
+            Point::new(offset_x + 218, offset_y + 5), style, text_style
         )
             .draw(buffer)
             .expect("draw today cases");

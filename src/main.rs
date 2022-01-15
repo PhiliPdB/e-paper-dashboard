@@ -8,7 +8,7 @@ use structopt::StructOpt;
 use e_paper_dashboard::{
     config::Config,
     dashboard::Dashboard,
-    module::{Module, date::DateModule, weather::WeatherModule, covid::CovidModule}
+    module::{Module, date::DateModule, weather::WeatherModule, covid::CovidModule, sysinfo::SystemInfoModule}
 };
 
 
@@ -37,10 +37,13 @@ fn main() {
         config.open_weather_map_api_key,
         config.latitude, config.longitude
     );
-    weather.draw(dashboard.display(), 0, 30);
+    weather.draw(dashboard.display(), 0, 32);
 
     let covid = CovidModule::new(config.country);
-    covid.draw(dashboard.display(), 0, 78);
+    covid.draw(dashboard.display(), 0, 80);
+
+    let sys_info = SystemInfoModule::new();
+    sys_info.draw(dashboard.display(), 0, 128);
 
     // e_paper_dashboard::image::draw_icon(
     //     dashboard.display(), Point::new(5, 5),

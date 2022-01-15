@@ -40,7 +40,7 @@ impl Module for WeatherModule {
 
         // Draw weather icon
         image::draw_icon(
-            buffer, Point::new(offset_x + 2, offset_y + 2),
+            buffer, Point::new(offset_x + 2, offset_y),
             &format!("weather/{}.png", weather.current.weather[0].icon), 45,
             TriColor::Chromatic,
         );
@@ -55,7 +55,7 @@ impl Module for WeatherModule {
 
         Text::with_text_style(
             &format!("{:.0}°C", weather.current.temp.round()),
-            Point::new(offset_x + 50, offset_y + 8), style, text_style
+            Point::new(offset_x + 50, offset_y + 6), style, text_style
         )
             .draw(buffer)
             .expect("draw temperature");
@@ -64,7 +64,7 @@ impl Module for WeatherModule {
         style.font = &profont::PROFONT_12_POINT;
         Text::with_text_style(
             &weather.current.weather[0].main,
-            Point::new(offset_x + 50, offset_y + 8 + line_height), style, text_style
+            Point::new(offset_x + 50, offset_y + 6 + line_height), style, text_style
         )
             .draw(buffer)
             .expect("draw weather description");
@@ -78,26 +78,26 @@ impl Module for WeatherModule {
         let line_height = style.font.character_size.height as i32;
         Text::with_text_style(
             &format!("Feels like {:.0}°", weather.current.feels_like.round()),
-            Point::new(offset_x + 102, offset_y + 11), style, text_style
+            Point::new(offset_x + 102, offset_y + 9), style, text_style
         )
             .draw(buffer)
             .expect("draw feels like");
         Text::with_text_style(
             &format!("Humidity {}%", weather.current.humidity),
-            Point::new(offset_x + 102, offset_y + 11 + line_height), style, text_style
+            Point::new(offset_x + 102, offset_y + 9 + line_height), style, text_style
         )
             .draw(buffer)
             .expect("draw humidity");
 
         Text::with_text_style(
             &format!("Day {:.0}°", weather.daily[0].temp.day.round()),
-            Point::new(offset_x + 200, offset_y + 11), style, text_style
+            Point::new(offset_x + 200, offset_y + 9), style, text_style
         )
             .draw(buffer)
             .expect("draw day temp");
         Text::with_text_style(
             &format!("Night {:.0}°", weather.daily[0].temp.night.round()),
-            Point::new(offset_x + 200, offset_y + 11 + line_height), style, text_style
+            Point::new(offset_x + 200, offset_y + 9 + line_height), style, text_style
         )
             .draw(buffer)
             .expect("draw night temp");
