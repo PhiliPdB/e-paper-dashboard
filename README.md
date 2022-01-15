@@ -14,5 +14,5 @@ I'm able to communicate with the display to draw in all three supported colours.
 - [ ] Create modules for:
     - [x] Current date
     - [x] Weather information
-    - [ ] Covid-19 information
+    - [x] Covid-19 information
     - [ ] System information

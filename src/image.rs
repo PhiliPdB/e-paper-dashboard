@@ -16,7 +16,7 @@ use image::{
 
 pub fn draw_icon(
     target: &mut Display2in7b, location: Point,
-    path: String, size: u32,
+    path: &str, size: u32,
     on_color: TriColor,
 ) {
     let img = ImageReader::open(format!("./assets/{}", path))

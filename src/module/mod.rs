@@ -1,5 +1,6 @@
 use epd_waveshare::epd2in7b::Display2in7b;
 
+pub mod covid;
 pub mod date;
 pub mod weather;
 

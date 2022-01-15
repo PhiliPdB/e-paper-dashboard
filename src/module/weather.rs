@@ -41,7 +41,7 @@ impl Module for WeatherModule {
         // Draw weather icon
         image::draw_icon(
             buffer, Point::new(offset_x + 2, offset_y + 2),
-            format!("weather/{}.png", weather.current.weather[0].icon), 45,
+            &format!("weather/{}.png", weather.current.weather[0].icon), 45,
             TriColor::Chromatic,
         );
 

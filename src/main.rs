@@ -8,7 +8,7 @@ use structopt::StructOpt;
 use e_paper_dashboard::{
     config::Config,
     dashboard::Dashboard,
-    module::{Module, date::DateModule, weather::WeatherModule}
+    module::{Module, date::DateModule, weather::WeatherModule, covid::CovidModule}
 };
 
 
@@ -32,11 +32,15 @@ fn main() {
     // TODO: Move this inside the dashboard struct
     let date = DateModule::new();
     date.draw(dashboard.display(), 0, 0);
+
     let weather = WeatherModule::new(
         config.open_weather_map_api_key,
         config.latitude, config.longitude
     );
     weather.draw(dashboard.display(), 0, 30);
+
+    let covid = CovidModule::new(config.country);
+    covid.draw(dashboard.display(), 0, 78);
 
     // e_paper_dashboard::image::draw_icon(
     //     dashboard.display(), Point::new(5, 5),
